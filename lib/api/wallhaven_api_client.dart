@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:wallhaven_api/models/models.dart';
 
 class WallhavenApiClient {
   static const String _baseUrl = 'https://wallhaven.cc/api/v1';
@@ -18,8 +19,9 @@ class WallhavenApiClient {
     final Map<String, dynamic> data = jsonDecode(response.body);
 
     if (response.statusCode != 200) {
-      // TODO throw exception
+      throw WallhavenException.fromJson(data);
     }
+
     return data;
   }
 }
