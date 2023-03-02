@@ -6,6 +6,7 @@ export 'exception/wallhaven_exception.dart';
 export 'file_type/file_type.dart';
 export 'meta/meta.dart';
 export 'purity/purity.dart';
+export 'search/search.dart';
 export 'settings/settings.dart';
 export 'tag/tag.dart';
 export 'thumbs/thumbs.dart';
