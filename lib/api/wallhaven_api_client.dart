@@ -25,6 +25,20 @@ class WallhavenApiClient {
     return data;
   }
 
+  Future<Collections> collection({
+    required String username,
+    required int id,
+    String? apiKey,
+  }) async {
+    return Collections.fromJson(
+      await _request(
+        Uri.parse(
+          '$_baseUrl/collections/$username/$id${apiKey != null ? '?apikey=$apiKey' : ''}',
+        ),
+      ),
+    );
+  }
+
   Future<Collections> collections({
     String? username,
     String? apiKey,
