@@ -53,6 +53,16 @@ class WallhavenApiClient {
     );
   }
 
+  Future<Search> search({String? apiKey}) async {
+    return Search.fromJson(
+      await _request(
+        Uri.parse(
+          '$_baseUrl/search${apiKey != null ? '?apikey=$apiKey' : ''}',
+        ),
+      ),
+    );
+  }
+
   Future<Settings> settings({String? apiKey}) async {
     return Settings.fromJson(
       await _request(
