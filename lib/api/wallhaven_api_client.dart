@@ -25,6 +25,16 @@ class WallhavenApiClient {
     return data;
   }
 
+  Future<Settings> settings({String? apiKey}) async {
+    return Settings.fromJson(
+      await _request(
+        Uri.parse(
+          '$_baseUrl/settings${apiKey != null ? '?apikey=$apiKey' : ''}',
+        ),
+      ),
+    );
+  }
+
   Future<Tag> tag(int id) async {
     return Tag.fromJson(
       await _request(
