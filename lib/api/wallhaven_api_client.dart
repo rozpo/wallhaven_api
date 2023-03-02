@@ -34,4 +34,14 @@ class WallhavenApiClient {
       ),
     );
   }
+
+  Future<Wallpaper> wallpaper(String id, {String? apiKey}) async {
+    return Wallpaper.fromJson(
+      await _request(
+        Uri.parse(
+          '$_baseUrl/w/$id${apiKey != null ? '?apikey=$apiKey' : ''}',
+        ),
+      ),
+    );
+  }
 }
