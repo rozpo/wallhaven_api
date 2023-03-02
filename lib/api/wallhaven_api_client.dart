@@ -24,4 +24,14 @@ class WallhavenApiClient {
 
     return data;
   }
+
+  Future<Tag> tag(int id) async {
+    return Tag.fromJson(
+      await _request(
+        Uri.parse(
+          '$_baseUrl/tag/$id',
+        ),
+      ),
+    );
+  }
 }
