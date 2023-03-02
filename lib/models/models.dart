@@ -1,6 +1,11 @@
 export 'avatar/avatar.dart';
+export 'category/category.dart';
+export 'collection/collection.dart';
 export 'collections/collections.dart';
 export 'exception/wallhaven_exception.dart';
+export 'file_type/file_type.dart';
+export 'meta/meta.dart';
+export 'purity/purity.dart';
 export 'settings/settings.dart';
 export 'tag/tag.dart';
 export 'thumbs/thumbs.dart';
