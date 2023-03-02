@@ -1,7 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'package:wallhaven_api/models/models.dart';
+
+import '../models/models.dart';
 
 class WallhavenApiClient {
   static const String _baseUrl = 'https://wallhaven.cc/api/v1';

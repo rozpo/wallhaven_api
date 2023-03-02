@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:wallhaven_api/models/models.dart';
+
+import '../models.dart';
 
 part 'wallpaper.g.dart';
 

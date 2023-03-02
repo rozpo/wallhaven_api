@@ -1,4 +1,3 @@
-import 'package:wallhaven_api/models/models.dart';
 import 'package:wallhaven_api/wallhaven_api.dart';
 
 void main() async {
