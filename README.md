@@ -11,29 +11,58 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# Wallhaven API
+
+This package is a wrapper written in the [Dart programming language](https://dart.dev/) for [Wallhaven](https://wallhaven.cc) API calls.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+**WallhavenApiClient** can provide wrappers for the endpoints listed under [Wallhaven API documentation](https://wallhaven.cc/help/api).
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use package include **wallhaven_api** in your **pubspec.yaml** file.
+
+```yaml
+dependencies:
+  wallhaven_api: ^0.1.0
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Initialize API Client:
 
 ```dart
-const like = 'sample';
+WallhavenApiClient api = WallhavenApiClient();
 ```
 
-## Additional information
+Get wallpaper by ID:
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+try {
+  Wallpaper wallpaper = await api.wallpaper('id');
+  print(wallpaper.data.path);
+} catch (e) {
+  if (e is WallhavenException) {
+    print(e.error);
+  }
+}
+```
+
+## Rate Limiting and Errors
+
+Please follow the guideline from the [official API documentation](https://wallhaven.cc/help/api#limits).
+
+## Package Limitations
+
+Here is a list of known limitations that will be resolved in the future:
+
+- No possibility for including a header to the request.
+- Missing query params for a search endpoint.
+- No error codes.
+
+## Additional Information
+
+Feel free to create a new [issue](https://github.com/rozpo/wallhaven_api/issues/new) if you found any problem with the package.
+
+Create a [discussion](https://github.com/rozpo/wallhaven_api/discussions/new/choose) in case you think some features are missing.
